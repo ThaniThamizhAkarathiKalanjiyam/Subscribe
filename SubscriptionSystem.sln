@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.4
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriptionSystem", "SubscriptionSystem\SubscriptionSystem.csproj", "{9A7316E8-9B1C-4788-9FD5-CAD7745FB372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriptionSystemEntity", "SubscriptionSystemEntity\SubscriptionSystemEntity.csproj", "{E65EDF5E-48EF-4644-ADFC-47FA3C40BD3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriptionSystemBusiness", "SubscriptionSystemBusiness\SubscriptionSystemBusiness.csproj", "{6E7A6513-F176-4E8B-95C5-46454980FCE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A7316E8-9B1C-4788-9FD5-CAD7745FB372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7316E8-9B1C-4788-9FD5-CAD7745FB372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7316E8-9B1C-4788-9FD5-CAD7745FB372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7316E8-9B1C-4788-9FD5-CAD7745FB372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65EDF5E-48EF-4644-ADFC-47FA3C40BD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65EDF5E-48EF-4644-ADFC-47FA3C40BD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65EDF5E-48EF-4644-ADFC-47FA3C40BD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65EDF5E-48EF-4644-ADFC-47FA3C40BD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7A6513-F176-4E8B-95C5-46454980FCE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7A6513-F176-4E8B-95C5-46454980FCE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7A6513-F176-4E8B-95C5-46454980FCE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7A6513-F176-4E8B-95C5-46454980FCE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
