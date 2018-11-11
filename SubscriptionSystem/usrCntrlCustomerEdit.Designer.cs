@@ -1,6 +1,6 @@
 ﻿namespace SubscriptionSystem
 {
-    partial class usrCntrlCustomerEdit
+    partial class frmCntrlCustomerEdit
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,22 +33,21 @@
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblCusSubscripsionDate = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.txtOneOffPaymentAmount = new System.Windows.Forms.TextBox();
-            this.lblOneOffPaymentAmount = new System.Windows.Forms.Label();
-            this.lblIsRecurringEnabled = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.lblAccountStatus = new System.Windows.Forms.Label();
-            this.cboRecurringEnabled = new System.Windows.Forms.ComboBox();
             this.cboDate = new System.Windows.Forms.ComboBox();
             this.cboMonth = new System.Windows.Forms.ComboBox();
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(354, 294);
+            this.btnSave.Location = new System.Drawing.Point(354, 276);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
@@ -58,12 +57,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(261, 294);
+            this.btnCancel.Location = new System.Drawing.Point(261, 276);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblCustomerName
             // 
@@ -90,35 +90,10 @@
             this.txtCustomerName.Size = new System.Drawing.Size(184, 20);
             this.txtCustomerName.TabIndex = 4;
             // 
-            // txtOneOffPaymentAmount
-            // 
-            this.txtOneOffPaymentAmount.Location = new System.Drawing.Point(244, 116);
-            this.txtOneOffPaymentAmount.Name = "txtOneOffPaymentAmount";
-            this.txtOneOffPaymentAmount.Size = new System.Drawing.Size(184, 20);
-            this.txtOneOffPaymentAmount.TabIndex = 9;
-            // 
-            // lblOneOffPaymentAmount
-            // 
-            this.lblOneOffPaymentAmount.BackColor = System.Drawing.SystemColors.GrayText;
-            this.lblOneOffPaymentAmount.Location = new System.Drawing.Point(19, 119);
-            this.lblOneOffPaymentAmount.Name = "lblOneOffPaymentAmount";
-            this.lblOneOffPaymentAmount.Size = new System.Drawing.Size(216, 13);
-            this.lblOneOffPaymentAmount.TabIndex = 7;
-            this.lblOneOffPaymentAmount.Text = "Enter OneOff Payment Amount";
-            // 
-            // lblIsRecurringEnabled
-            // 
-            this.lblIsRecurringEnabled.BackColor = System.Drawing.SystemColors.GrayText;
-            this.lblIsRecurringEnabled.Location = new System.Drawing.Point(19, 88);
-            this.lblIsRecurringEnabled.Name = "lblIsRecurringEnabled";
-            this.lblIsRecurringEnabled.Size = new System.Drawing.Size(216, 13);
-            this.lblIsRecurringEnabled.TabIndex = 6;
-            this.lblIsRecurringEnabled.Text = "Want Recurring subscripsion?";
-            // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(244, 152);
+            this.textBox5.Location = new System.Drawing.Point(244, 81);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(184, 20);
             this.textBox5.TabIndex = 11;
@@ -126,22 +101,11 @@
             // lblAccountStatus
             // 
             this.lblAccountStatus.BackColor = System.Drawing.SystemColors.GrayText;
-            this.lblAccountStatus.Location = new System.Drawing.Point(19, 155);
+            this.lblAccountStatus.Location = new System.Drawing.Point(19, 84);
             this.lblAccountStatus.Name = "lblAccountStatus";
             this.lblAccountStatus.Size = new System.Drawing.Size(216, 13);
             this.lblAccountStatus.TabIndex = 10;
             this.lblAccountStatus.Text = "Account Status";
-            // 
-            // cboRecurringEnabled
-            // 
-            this.cboRecurringEnabled.FormattingEnabled = true;
-            this.cboRecurringEnabled.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.cboRecurringEnabled.Location = new System.Drawing.Point(244, 85);
-            this.cboRecurringEnabled.Name = "cboRecurringEnabled";
-            this.cboRecurringEnabled.Size = new System.Drawing.Size(184, 21);
-            this.cboRecurringEnabled.TabIndex = 12;
             // 
             // cboDate
             // 
@@ -170,34 +134,65 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 183);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 129);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(406, 105);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(406, 91);
             this.dataGridView1.TabIndex = 16;
             // 
-            // usrCntrlCustomerEdit
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.label1.Location = new System.Drawing.Point(19, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(409, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Payment Summary";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(273, 226);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 19;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(354, 226);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // frmCntrlCustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 329);
+            this.ClientSize = new System.Drawing.Size(454, 320);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cboYear);
             this.Controls.Add(this.cboMonth);
             this.Controls.Add(this.cboDate);
-            this.Controls.Add(this.cboRecurringEnabled);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.lblAccountStatus);
-            this.Controls.Add(this.txtOneOffPaymentAmount);
-            this.Controls.Add(this.lblOneOffPaymentAmount);
-            this.Controls.Add(this.lblIsRecurringEnabled);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.lblCusSubscripsionDate);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Name = "usrCntrlCustomerEdit";
+            this.Name = "frmCntrlCustomerEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Customer Edit";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,15 +206,14 @@
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblCusSubscripsionDate;
         private System.Windows.Forms.TextBox txtCustomerName;
-        private System.Windows.Forms.TextBox txtOneOffPaymentAmount;
-        private System.Windows.Forms.Label lblOneOffPaymentAmount;
-        private System.Windows.Forms.Label lblIsRecurringEnabled;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lblAccountStatus;
-        private System.Windows.Forms.ComboBox cboRecurringEnabled;
         private System.Windows.Forms.ComboBox cboDate;
         private System.Windows.Forms.ComboBox cboMonth;
         private System.Windows.Forms.ComboBox cboYear;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

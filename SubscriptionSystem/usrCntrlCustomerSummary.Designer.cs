@@ -32,6 +32,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCalculate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,24 +41,25 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(460, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(439, 198);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(260, 253);
+            this.btnEdit.Location = new System.Drawing.Point(307, 253);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(353, 253);
+            this.btnAdd.Location = new System.Drawing.Point(388, 253);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -74,10 +76,21 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Customer Details Summary";
             // 
+            // btnCalculate
+            // 
+            this.btnCalculate.Location = new System.Drawing.Point(24, 253);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(152, 23);
+            this.btnCalculate.TabIndex = 5;
+            this.btnCalculate.Text = "Calculate Account Status";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            // 
             // usrCntrlCustomerSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -96,5 +109,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCalculate;
     }
 }

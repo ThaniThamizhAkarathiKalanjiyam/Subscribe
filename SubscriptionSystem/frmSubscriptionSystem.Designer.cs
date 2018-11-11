@@ -46,7 +46,8 @@
             this.ClientSize = new System.Drawing.Size(469, 370);
             this.Controls.Add(this.usrCntrlCustomerSummary1);
             this.Name = "frmSubscriptionSystem";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Customer Details Summary";
             this.ResumeLayout(false);
 
         }

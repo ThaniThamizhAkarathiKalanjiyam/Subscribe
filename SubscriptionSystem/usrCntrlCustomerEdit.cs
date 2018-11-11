@@ -11,12 +11,18 @@ using SubscriptionSystemEntity;
 
 namespace SubscriptionSystem
 {
-    public partial class usrCntrlCustomerEdit : Form
+    public partial class frmCntrlCustomerEdit : Form
     {
-        public usrCntrlCustomerEdit()
+        public frmCntrlCustomerEdit()
         {
             InitializeComponent();
 
+            LoadDateValues();
+
+        }
+
+        private void LoadDateValues()
+        {
             //Date
             for (int i = 1; i <= 31; i++)
             {
@@ -46,23 +52,74 @@ namespace SubscriptionSystem
             {
                 cboYear.Items.Add(i);
             }
-
         }
+
+        public frmCntrlCustomerEdit(string customerName)
+        {
+            InitializeComponent();
+
+            LoadDateValues();
+            LoadCustomerDetailsFromList(customerName);
+        }
+        string customerNameLoc = "";
+        CustomerE customerDetail = new CustomerE();
+        private void LoadCustomerDetailsFromList(string customerName)
+        {
+            customerNameLoc = customerName;
+
+            for (int i = 0; i < objCustomerB.Customers.Count; i++)
+            {
+                if (objCustomerB.Customers[i].CustomerName == customerName)
+                {
+                    customerDetail = objCustomerB.Customers[i];
+                }
+            }
+
+            txtCustomerName.Text = customerDetail.CustomerName;
+            cboDate.Text = customerDetail.CusSubscripsionDate.ToString("dd");
+            cboMonth.Text = customerDetail.CusSubscripsionDate.ToString("MM");
+            cboYear.Text = customerDetail.CusSubscripsionDate.Year.ToString();
+
+            paymentLOC = customerDetail.Payment;
+
+            var list = new BindingList<PaymentE>(customerDetail.Payment);
+            dataGridView1.DataSource = list;
+            dataGridView1.Refresh();
+        }
+
         CustomerB objCustomerB = CustomerB.Instance;
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            objCustomerB.Customers.Add(new CustomerE
+            if (customerNameLoc == "")
             {
-                CustomerName = txtCustomerName.Text,
-                CusSubscripsionDate = new DateTime(
+                //add coding
+                objCustomerB.Customers.Add(new CustomerE
+                {
+                    CustomerName = txtCustomerName.Text,
+                    CusSubscripsionDate = new DateTime(
+                        Convert.ToInt32(cboYear.Text),
+                        Convert.ToInt32(cboMonth.Text),
+                        Convert.ToInt32(cboDate.Text)
+                        ),
+                    Payment = paymentLOC
+                    //IsRecurringEnabled = cboRecurringEnabled.Text == "Yes" ? true : false,
+                    //OneOffPaymentAmount = Convert.ToInt32(txtOneOffPaymentAmount.Text)
+                });
+            }
+            else
+            {
+                // editing
+                customerDetail.CustomerName = txtCustomerName.Text;
+                customerDetail.CusSubscripsionDate = new DateTime(
                     Convert.ToInt32(cboYear.Text),
                     Convert.ToInt32(cboMonth.Text),
                     Convert.ToInt32(cboDate.Text)
-                    ),
-                IsRecurringEnabled = cboRecurringEnabled.Text == "Yes" ? true : false,
-                OneOffPaymentAmount = Convert.ToInt32(txtOneOffPaymentAmount.Text)
-            });
+                    );
+                //customerDetail.IsRecurringEnabled = cboRecurringEnabled.Text == "Yes" ? true : false;
+                //customerDetail.OneOffPaymentAmount = Convert.ToInt32(txtOneOffPaymentAmount.Text);
+
+            }
 
             MessageBox.Show("No of customers: " + objCustomerB.Customers.Count);
 
@@ -74,6 +131,27 @@ namespace SubscriptionSystem
 
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        List<PaymentE> paymentLOC = new List<PaymentE>();
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmPayment objFrmPayment = new frmPayment();
+            objFrmPayment.ShowDialog();
+
+            paymentLOC.Add
+                (
+                    objFrmPayment.getPayment()
+                );
+            objFrmPayment.Dispose();
+
+
+            var list = new BindingList<PaymentE>(paymentLOC);
+            dataGridView1.DataSource = list;
+            dataGridView1.Refresh();
+        }
     }
 }
