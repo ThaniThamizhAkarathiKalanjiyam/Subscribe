@@ -1,0 +1,106 @@
+Hi Muthukumaran,
+
+
+We are happy to Inform to inform you that you have been shortlisted for Final round of interview in which you need to write a solution for the Problem which is mentioned below in any language you are comfortable with. please complete the test by Monday and reply us back the solution so we can set up the final round in office location where you need to demo the solution you did for the Problem. please go through the test below.
+
+
+
+TASK:
+
+
+
+Given the following sequence of events, determine whether each customer's account is paid in full, in a overdue state, or disabled. 
+
+Customers can make one-off payments and set up recurring payments.
+
+Billing date is the last day of the month if it falls Monday - Friday, otherwise if it falls on a weekend, then the date is the previous Friday.
+
+Accounts are paid in arrears, i.e. if a customer subscribes to the service for January, then their account must be settled by the last day in January (given the above rule).
+
+Accounts over 1 week but less than 2 months in arrears are flagged as overdue, 2 months and over are disabled.
+
+Subscription costs £4.00 a month, but there is a £1.00 surcharge for making one-off payments. Consider today is the 31st July
+
+
+
+Customer 1 subscribed in March
+1st March one-off payment of £9
+15th May recurring payment
+15th June recurring payment
+		
+March   5
+April	4 = 0
+May		4
+June	4
+July	-4 OverDue
+
+5*4 = 20
+= 16  = -4 OverDue 
+
+no.ofmonths*4
+
+(offpayment-1)
+
+recurpayments
+
+<8)&&	overdue
+---------
+	
+
+
+7 < Overdue <60
+> 60 Disabled
+
+Customer 2 subscribed in February
+31st March one-off payment of £13
+29th April recurring payment
+29th May recurring payment
+29th June recurring payment
++++==>>>>>>>>
+
+February	4 = 4
+March	13 /	4+1 = 9 | 4
+April	4 = 0
+May		4
+June	4
+July	OverDue -4
+
+
+Customer 3 subscribed in January
+15th Jan one-off payment of £33
+
+January 33 - 5 = 28
+Febrary	4	=	24
+March	4	= 	20
+April	4 = 16
+May		4 = 12
+June 	4 = 8
+July	4= 4 +
+FullyPaid
+
+
+Customer 4 subscribed in July
+No payments to date.
+Overdue
+
+
+Customer 5 subscribed in April
+29th April recurring payment
+29th May recurring payment
+
+April 4
+May		4
+June	4
+July	4 = 8 Overdue
+
+
+
+Solution Pattern: Take inputs for all the required information and display the status of the customer when all the required information is given.
+
+Note: please reply back if you have any queries regarding the task
+
+
+
+Thanks,
+
+GSS
