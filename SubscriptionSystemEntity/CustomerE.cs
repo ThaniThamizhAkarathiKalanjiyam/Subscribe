@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 
 namespace SubscriptionSystemEntity
 {
@@ -31,6 +32,13 @@ namespace SubscriptionSystemEntity
             get { return accountStatus; }
             set { accountStatus = value; }
         }
+        int dueAmount;
+
+        public int DueAmount
+        {
+            get { return dueAmount; }
+            set { dueAmount = value; }
+        }
         DateTime cusSubscripsionDate = new DateTime(2018, 01, 01);
 
         public DateTime CusSubscripsionDate
@@ -53,6 +61,15 @@ namespace SubscriptionSystemEntity
             get { return oneOffPaymentAmount; }
             set { oneOffPaymentAmount = value; }
         }
+
+        List<PaymentE> payment = new List<PaymentE>();
+
+        public List<PaymentE> Payment
+        {
+            get { return payment; }
+            set { payment = value; }
+        }
+ 
 
         public CustomerE()
         {

@@ -16,5 +16,21 @@ namespace SubscriptionSystemEntity
             get { return paymentType; }
             set { paymentType = value; }
         }
+
+        int paymentAmount = 0;
+
+        public int PaymentAmount
+        {
+            get { return paymentAmount; }
+            set { paymentAmount = value; }
+        }
+
+        DateTime paymentDate = new DateTime();
+
+        public DateTime PaymentDate
+        {
+            get { return paymentDate; }
+            set { paymentDate = value; }
+        }
     }
 }
